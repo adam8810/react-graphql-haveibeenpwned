@@ -1,5 +1,5 @@
 resource "random_pet" "lambda_bucket_name" {
-  prefix = "j1-api-server"
+  prefix = "ambooth-api-server"
   length = 4
 }
 
@@ -27,7 +27,7 @@ resource "aws_s3_bucket_object" "lambda_server" {
 }
 
 resource "aws_lambda_function" "server" {
-  function_name = "j1ApiServer"
+  function_name = "haveibeenpwnedApiServer"
 
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key    = aws_s3_bucket_object.lambda_server.key
